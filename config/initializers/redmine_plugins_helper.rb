@@ -12,7 +12,9 @@ EOS
   unmotivated_message: 'This issue is not motivated.'
 }
 
-default_admin = ::User.where(id: 1, admin: true).first
-default_value[:admin_user_id] = default_admin.id if default_admin
+if ActiveRecord::Base.connection.table_exists? ::User.table_name
+  default_admin = ::User.where(id: 1, admin: true).first
+  default_value[:admin_user_id] = default_admin.id if default_admin
+end
 
 ::RedminePluginsHelper::Settings.default(:redmine_avm, default_value)
