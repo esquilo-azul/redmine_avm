@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_avm do
   name 'Agora Vai! Methodology'
   author 'Eduardo Henrique Bogoni'
   description ''
-  version '0.3.1'
+  version '0.3.2'
 
   settings(partial: 'settings/avm')
 
