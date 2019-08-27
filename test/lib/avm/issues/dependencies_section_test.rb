@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 require 'aranha/parsers/spec/source_target_fixtures'
 
@@ -23,7 +25,7 @@ module Avm
       private
 
       def fixtures_dir
-        File.expand_path('../dependencies_section_test_files', __FILE__)
+        File.expand_path('dependencies_section_test_files', __dir__)
       end
 
       def issue_with_description(description)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 require 'aranha/parsers/spec/source_target_fixtures'
 
@@ -68,6 +70,7 @@ module Avm
         relation = blocked.relations_to.where(issue_from: blocker)
         assert relation.empty?
         return unless blocked_by
+
         IssueRelation.create!(issue_to: blocked, issue_from: blocker,
                               type: IssueRelation::TYPE_BLOCKS)
         relation.destroy_all

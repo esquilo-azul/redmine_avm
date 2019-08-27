@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IssueStatusAssignsController < ApplicationController
   before_action :require_admin, :active_scaffold_set_dynamic_options
   layout 'admin'
