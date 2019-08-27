@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'aranha/parsers/spec/source_target_fixtures'
 
 module Avm
   module Issues
@@ -6,7 +7,7 @@ module Avm
       fixtures :issues, :issue_relations, :issue_statuses, :projects, :trackers, :users
 
       test 'dependencies section' do
-        EacBase::SourceTargetFixtures.new(fixtures_dir).source_target_files do |s, t|
+        ::Aranha::Spec::SourceTargetFixtures.new(fixtures_dir).source_target_files do |s, t|
           td = YAML.load_file(t)
           issue = issue_with_description(File.read(s))
 
