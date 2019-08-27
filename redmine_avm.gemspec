@@ -14,6 +14,4 @@ Gem::Specification.new do |s|
   s.homepage    = ::RedmineAvm::HOMEPAGE
 
   s.files = Dir['{app,config,db,lib}/**/*', 'init.rb']
-
-  s.add_dependency 'eac_rails_utils', '~> 0.2'
 end
