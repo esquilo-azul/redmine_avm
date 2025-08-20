@@ -39,7 +39,7 @@ module Avm
       end
 
       test 'there are fixtures' do
-        assert self.class.target_source_fixtures.source_target_files.count.positive?
+        assert self.class.target_source_fixtures.source_target_files.any?
       end
 
       private
